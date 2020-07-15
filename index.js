@@ -30,3 +30,8 @@ app.get("/api/products", (req, res) => {
     let updatedProduct = repoContext.movies.updateMovie(productToUpdate);
     res.send(updatedProduct);
    });
+   app.delete("/api/products/deleteMovie/:id", (req, res) => {
+    let id = req.params.id;
+    let updatedDataSet = repoContext.movies.deleteMovie(id);
+    res.send(updatedDataSet);
+   });

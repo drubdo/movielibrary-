@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "title": "The Departed",
-    "director": "Martin Scorsese",
+    "title": "Las Vegas",
+    "director": "MY HOUSE",
     "genre": "Drama"
   },
   {
@@ -24,15 +24,9 @@
     "genre": "Comedy"
   },
   {
-    "id": 5,
-    "title": "Die Hard",
-    "director": "John McTiernan",
-    "genre": "Action"
+    "id": 5
   },
   {
     "id": 6
-  },
-  {
-    "id": 7
   }
 ]
