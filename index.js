@@ -1,6 +1,8 @@
 const repoContext = require("./repository/repository-wrapper.js");
 const express = require('express');
 const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.listen(3000, function(){
     console.log("Server started. Listening on port 3000.");
@@ -17,4 +19,10 @@ app.get("/api/products", (req, res) => {
     res.send(product);
    });
 
-   
+   app.post("/api/products/create", (req, res) => {
+    let newProduct = req.body;
+    let addedProduct = repoContext.movies.createMovie(newProduct);
+    res.send(addedProduct);
+   });
+
+  
