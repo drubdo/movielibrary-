@@ -25,4 +25,8 @@ app.get("/api/products", (req, res) => {
     res.send(addedProduct);
    });
 
-  
+   app.put("/api/products/updateMovie", (req, res) => {
+    let productToUpdate = req.body;
+    let updatedProduct = repoContext.movies.updateMovie(productToUpdate);
+    res.send(updatedProduct);
+   });
