@@ -10,3 +10,11 @@ app.get("/api/products", (req, res) => {
     let products = repoContext.movies.findAllMovies();
     res.send(products);
    });
+
+   app.get("/api/products/:id", (req, res) => {
+    let id = req.params.id;
+    let product = repoContext.movies.findMovieById(id);
+    res.send(product);
+   });
+
+   
