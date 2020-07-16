@@ -1,6 +1,18 @@
 [
   {
     "id": 1,
+    "title": "Las Vegas",
+    "director": "MY HOUSE",
+    "genre": "Drama"
+  },
+  {
+    "id": 2,
+    "title": "The Dark Knight",
+    "director": "Drama",
+    "genre": "Christopher Nolan"
+  },
+  {
+    "id": 3,
     "title": "Inception",
     "director": "Christopher Nolan",
     "genre": "Drama"
@@ -12,12 +24,9 @@
     "genre": "Comedy"
   },
   {
-    "id": 3,
-    "title": "Die Hard",
-    "director": "John McTiernan",
-    "genre": "Action"
+    "id": 5
   },
   {
-    "id": 4
+    "id": 6
   }
 ]

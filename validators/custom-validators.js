@@ -1,5 +1,4 @@
 const { isNullOrUndefined, isString, isNumber } = require("util");
-
 function isNotEmptyAndIsString(value) {
   return !isNullOrUndefined(value) && isString(value);
 }
