@@ -1,13 +1,10 @@
 const { isNullOrUndefined, isString, isNumber } = require("util");
-
 function isNotEmptyAndIsString(value) {
   return !isNullOrUndefined(value) && isString(value);
 }
-
 function isNotEmptyAndIsNumber(value) {
   return !isNullOrUndefined(value) && isNumber(value);
 }
-
 exports.body = (req, res, next) => {
   let method = req.method;
   if (method == "POST" || method == "PUT") {
