@@ -25,11 +25,17 @@ function getMovieByID(movieID){
     })
 }
 
-function createRecord(newRecord){
+function createRecord(){
+    let obj = {
+        title: $("#title").val(), 
+        director: $("#director").val(), 
+        genre: $("#genre").val()
+    }
+
     $.ajax({
         method: "POST", 
         url: url + "/api/products/create", 
-        data: newRecord, 
+        data: obj, 
         async: false, 
     }).done(function( data ) {
         console.log('Yay it works!', data)
