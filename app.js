@@ -22,3 +22,14 @@ function getMovieByID(movieID){
         console.log('Yay it works!', data)
     })
 }
+
+function createRecord(newRecord){
+    $.ajax({
+        method: "POST", 
+        url: "http://localhost:3000/api/products/create", 
+        data: newRecord, 
+        async: false, 
+    }).done(function( data ) {
+        console.log('Yay it works!', data)
+    })
+}
