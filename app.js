@@ -1,9 +1,11 @@
 'use strict'
 
+let url = "http://localhost:3000"; 
+
 function getAllMovies(){
     $.ajax({
         method: "GET",
-        url: "http://localhost:3000/api/products",
+        url: url + "/api/products",
         data: {},
         async: false,  
     }).done(function( data ) {
@@ -15,7 +17,7 @@ getAllMovies();
 function getMovieByID(movieID){
     $.ajax({
         method: "GET", 
-        url: "http://localhost:3000/api/products/" + movieID, 
+        url: url + "/api/products/" + movieID, 
         data: {}, 
         async: false, 
     }).done(function( data ) {
@@ -26,7 +28,18 @@ function getMovieByID(movieID){
 function createRecord(newRecord){
     $.ajax({
         method: "POST", 
-        url: "http://localhost:3000/api/products/create", 
+        url: url + "/api/products/create", 
+        data: newRecord, 
+        async: false, 
+    }).done(function( data ) {
+        console.log('Yay it works!', data)
+    })
+}
+
+function updateRecord(updateRecord){
+    $.ajax({
+        method: "PUT", 
+        url: url + "/api/products/updateMovie", 
         data: newRecord, 
         async: false, 
     }).done(function( data ) {
