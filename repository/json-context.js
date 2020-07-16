@@ -49,7 +49,9 @@ function create(dataPath, data) {
 }
 
 function update(dataPath, data) {
+
   let jsonData = readFileSync(dataPath);
+  console.log(jsonData)
   jsonData[data.id - 1] = data;
   writeFileSync(dataPath, jsonData);
   return data;
