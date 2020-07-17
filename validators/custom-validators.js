@@ -10,13 +10,10 @@ exports.body = (req, res, next) => {
   if (method == "POST" || method == "PUT") {
     let data = req.body;
     if (
-      (method == "POST"
-        ? isNullOrUndefined(data.id)
-        : isNotEmptyAndIsNumber(data.id)) &&
-      isNotEmptyAndIsString(data.name) &&
-      isNotEmptyAndIsString(data.description) &&
-      isNotEmptyAndIsString(data.category) &&
-      isNotEmptyAndIsNumber(data.price)
+      (method == "POST" ? isNullOrUndefined(data.id) : isNotEmptyAndIsNumber(data.id)) &&
+      isNotEmptyAndIsString(data.title) &&
+      isNotEmptyAndIsString(data.director) &&
+      isNotEmptyAndIsString(data.genre)
     ) {
       next();
     } else {

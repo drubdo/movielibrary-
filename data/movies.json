@@ -24,9 +24,27 @@
     "genre": "Comedy"
   },
   {
-    "id": 5
+    "id": 5,
+    "title": "test",
+    "director": "test",
+    "genre": "test"
   },
   {
-    "id": 6
+    "id": 6,
+    "title": "test",
+    "director": "test",
+    "genre": "test"
+  },
+  {
+    "id": 7,
+    "title": "test",
+    "director": "test",
+    "genre": "test"
+  },
+  {
+    "id": 8,
+    "title": "Sharks",
+    "director": "Ritz",
+    "genre": "Sports"
   }
 ]

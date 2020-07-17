@@ -37,6 +37,7 @@ function createRecord(){
         url: url + "/api/products/create", 
         data: obj, 
         async: false, 
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
     }).done(function( data ) {
         console.log('Yay it works!', data)
     })
