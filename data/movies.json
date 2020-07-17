@@ -46,5 +46,11 @@
     "title": "Sharks",
     "director": "Ritz",
     "genre": "Sports"
+  },
+  {
+    "id": 9,
+    "title": "Pizzaa",
+    "director": "food",
+    "genre": "Sweats "
   }
 ]

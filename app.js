@@ -9,10 +9,56 @@ function getAllMovies(){
         data: {},
         async: false,  
     }).done(function( data ) {
-        console.log('Yay it works!', data)
+        console.log('Yay it works!', data) 
+generateTable(data)
     });
 }
 getAllMovies();
+
+function generateTable(data){
+    let html;
+    html += `
+    <table class="table">
+    <thead>
+     <tr> 
+     <th>
+     edit
+     </th>
+     <th>
+     id
+     </th>
+     <th>
+     title
+     </th>
+     <th>
+     director
+     </th>
+     <th>
+     genre
+     </th>
+     </tr>
+    </thead>
+    `
+    $.each(data,function(index,value){
+        html += `
+         <tbody>
+         <tr>
+         <td>
+         <button onClick="edit(${value})">
+         edit
+         </button>
+         </td>
+         <td> ${value.id} </td>
+         <td> ${value.title} </td>
+         <td> ${value.director} </td>
+         <td> ${value.genre} </td>
+         </tr>
+         </tbody>     
+        `
+    })
+    html += `</table>`;
+ $("#movies").append(html)
+}
 
 function getMovieByID(movieID){
     $.ajax({
