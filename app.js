@@ -40,11 +40,15 @@ function generateTable(data){
     </thead>
     `
     $.each(data,function(index,value){
+
+        
+        let data = JSON.stringify(value).split('"').join("&quot;");
+
         html += `
          <tbody>
          <tr>
          <td>
-         <button onClick="edit(${value})">
+         <button onClick="edit('${data}')">
          edit
          </button>
          </td>
@@ -59,6 +63,10 @@ function generateTable(data){
     html += `</table>`;
  $("#movies").append(html)
 } 
+
+function edit(data){
+    console.log(JSON.parse(data))
+}
 
 function getMovieByID(movieID){
     $.ajax({
