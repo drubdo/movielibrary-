@@ -58,7 +58,7 @@ function generateTable(data){
     })
     html += `</table>`;
  $("#movies").append(html)
-}
+} 
 
 function getMovieByID(movieID){
     $.ajax({
