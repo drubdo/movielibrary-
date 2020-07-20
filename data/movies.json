@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "title": "Las Vegas",
-    "director": "MY HOUSE",
+    "title": "californiadfvdfgdf",
+    "director": "Martin Scorsese",
     "genre": "Drama"
   },
   {
@@ -13,7 +13,7 @@
   },
   {
     "id": 3,
-    "title": "Inception",
+    "title": "Inceptiongggfgfg",
     "director": "Christopher Nolan",
     "genre": "Drama"
   },
@@ -37,7 +37,7 @@
   },
   {
     "id": 7,
-    "title": "test",
+    "title": "testgdfgdfgdfg",
     "director": "test",
     "genre": "test"
   },
@@ -49,8 +49,8 @@
   },
   {
     "id": 9,
-    "title": "Pizzaa",
-    "director": "food",
+    "title": "taco belldfgdfgdfg",
+    "director": "food dfasdf",
     "genre": "Sweats "
   }
 ]
