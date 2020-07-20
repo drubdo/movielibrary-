@@ -51,13 +51,8 @@ function generateTable(data) {
         `
     })
     html += `</table>`;
-<<<<<<< HEAD
- $("#movies").append(html)
-} 
-=======
     $("#movies").append(html)
 }
->>>>>>> c59625e18eea638286eaa68eebd5f62a2af0b3a2
 
 function edit(data) {
     $("#edit").empty();
