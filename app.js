@@ -70,10 +70,10 @@ function edit(data) {
         <h4>Edit<h4>
         <form action="">
             <input id="edit_id" type="text" value="${data.id}" style="display:none">
-            title <input id="edit_title" type="text" value="${data.title}">
-            director <input id="edit_director" type="text" value="${data.director}">
-            genre <input id="edit_genre" type="text" value="${data.genre}">
-            image <input id="edit_image" type="text" value="${data.image}"> 
+            title <input id="edit_title" class="form-control" type="text" value="${data.title}">
+            director <input id="edit_director" class="form-control width-400" type="text" value="${data.director}">
+            genre <input id="edit_genre" class="form-control" type="text" value="${data.genre}">
+            image <input id="edit_image" class="form-control" type="text" value="${data.image}"> 
             <button type="button" onClick="updateRecord()">Update Record</button>
             <button type="button" onClick="deleteRecord()">Delete Record</button>
             <button type="button" onClick="cancelEdit()">Cancel</button>
