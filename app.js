@@ -13,6 +13,7 @@ function getAllMovies() {
     }).done(function (data) {
         console.log('Yay it works!', data)
         generateTable(data)
+        search(data[0])
     });
 }
 getAllMovies();
@@ -32,6 +33,8 @@ function generateTable(data) {
                 </tr>
             </thead>
     `
+
+    html += '<tbody id="myTable">';
     $.each(data, function (index, value) {
 
 
@@ -39,21 +42,21 @@ function generateTable(data) {
 
         let image = value.image;
         html += `
-         <tbody>
+         
             <tr>
             <td>
                 <button onClick="edit('${data}')"> edit </button>
             </td>
-            <td> ${value.id} </td>
-            <td> ${value.title} </td>
-            <td> ${value.director} </td>
-            <td> ${value.genre} </td>
-            <td> <img src="${image}" width="100"/> </td> 
+            <td id="id"> ${value.id} </td>
+            <td id="title"> ${value.title} </td>
+            <td id="director"> ${value.director} </td>
+            <td id="genre"> ${value.genre} </td>
+            <td id="image"> <img src="${image}" width="100"/> </td> 
             </tr>
-         </tbody>     
+             
         `
     })
-    html += `</table>`;
+    html += `</tbody> </table>`;
     $("#movies").append(html)
 }
 
@@ -108,7 +111,6 @@ function createRecord() {
         director: $("#director").val(),
         genre: $("#genre").val(),
         image: $("#image").val(), 
-
     }
 
     $.ajax({
@@ -120,7 +122,6 @@ function createRecord() {
             'Content-Type': 'application/x-www-form-urlencoded'
         }
     }).done(function (data) {
-        console.log('Yay it works!', data)
         getAllMovies();
     })
 }
@@ -141,9 +142,44 @@ function updateRecord(updateRecord) {
         dataType: "json",
         contentType: 'application/json',
     }).done(function (data) {
-        console.log('Yay it works!', data)
-
         $("#edit").empty();
         getAllMovies();
     })
 }
+<<<<<<< HEAD
+=======
+
+function search(columnNames){
+    let html = '<select id="selection" onchange="clearInput()">'
+    let i = 1
+    $.each(columnNames, function(key, value, index) {
+        html += `<option id="${key}" value="${i}">${key}</option>`
+        i++;
+    });
+    html += '</select>'
+    html += '<input type="text" onchange="searchTableUser()" id="userSearch">'
+    $("#searchFilter").append(html)
+}
+
+function searchTable(){
+    return $("#selection").val()
+}
+
+function clearInput(){
+    $("#userSearch").val("")
+    $('.search tr ').show();
+}
+
+$(document).ready(function() {
+    $(".table tbody").addClass("search");
+    $('#userSearch').keyup(function() {
+        let idTable = searchTable();
+        var rex = new RegExp($(this).val(), 'i');
+        $('.search tr ').hide();
+        $('.search tr ').filter(function(i, v) {
+            var $t = $(this).children(":eq(" + idTable + ")");
+            return rex.test($t.text());
+        }).show();
+    })
+});
+>>>>>>> 12068a47dba27c31b9033374d690e5d03fa5dc61
