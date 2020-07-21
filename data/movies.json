@@ -1,56 +1,64 @@
 [
   {
     "id": 1,
-    "title": "californiadfvdfgdf",
-    "director": "Martin Scorsese",
-    "genre": "Drama"
+    "title": "Pineapple Express",
+    "director": "David Gordon Green",
+    "genre": "Comedy",
+    "image": ""
   },
   {
     "id": 2,
-    "title": "The Dark Knight",
-    "director": "Drama",
-    "genre": "Christopher Nolan"
+    "title": "Inceptiongggfgfg",
+    "director": "Christopher Nolan",
+    "genre": "Drama",
+    "image": ""
   },
   {
     "id": 3,
-    "title": "Inceptiongggfgfg",
-    "director": "Christopher Nolan",
-    "genre": "Drama"
-  },
-  {
-    "id": 2,
     "title": "Pineapple Express",
     "director": "David Gordon Green",
-    "genre": "Comedy"
+    "genre": "test",
+    "image": ""
+  },
+  {
+    "id": 4,
+    "title": "testgdfgdfgdfg",
+    "director": "test",
+    "genre": "test",
+    "image": ""
   },
   {
     "id": 5,
-    "title": "test",
-    "director": "test",
-    "genre": "test"
+    "title": "Sharks",
+    "director": "Ritz",
+    "genre": "Sports",
+    "image": ""
   },
   {
     "id": 6,
-    "title": "test",
-    "director": "test",
-    "genre": "test"
+    "title": "taco belldfgdfgdfg",
+    "director": "food dfasdf",
+    "genre": "Sweats ",
+    "image": ""
   },
   {
     "id": 7,
-    "title": "testgdfgdfgdfg",
-    "director": "test",
-    "genre": "test"
+    "title": "",
+    "director": "",
+    "genre": "",
+    "image": ""
   },
   {
     "id": 8,
-    "title": "Sharks",
-    "director": "Ritz",
-    "genre": "Sports"
+    "title": "",
+    "director": "",
+    "genre": "",
+    "image": ""
   },
   {
     "id": 9,
-    "title": "taco belldfgdfgdfg",
-    "director": "food dfasdf",
-    "genre": "Sweats "
+    "title": "topgun",
+    "director": "N/A",
+    "genre": "action"
   }
 ]

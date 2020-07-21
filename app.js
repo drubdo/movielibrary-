@@ -28,6 +28,7 @@ function generateTable(data) {
                     <th> title </th>
                     <th> director </th>
                     <th> genre </th>
+                    <th> image </th>
                 </tr>
             </thead>
     `
@@ -36,6 +37,7 @@ function generateTable(data) {
 
         let data = JSON.stringify(value).split('"').join("&quot;");
 
+        let image = value.image;
         html += `
          <tbody>
             <tr>
@@ -46,6 +48,7 @@ function generateTable(data) {
             <td> ${value.title} </td>
             <td> ${value.director} </td>
             <td> ${value.genre} </td>
+            <td> <img src="${image}" width="100"/> </td> 
             </tr>
          </tbody>     
         `
@@ -62,14 +65,30 @@ function edit(data) {
         <form action="">
             <input id="edit_id" type="text" value="${data.id}" style="display:none">
             title <input id="edit_title" type="text" value="${data.title}">
-            director <input id="edit_director" type="text"  value="${data.director}">
-            genre <input id="edit_genre" type="text"   value="${data.genre}">
+            director <input id="edit_director" type="text" value="${data.director}">
+            genre <input id="edit_genre" type="text" value="${data.genre}">
+            image <input id="edit_image" type="text" value="${data.image}"> 
             <button type="button" onClick="updateRecord()">Update Record</button>
+            <button type="button" onClick="deleteRecord()">Delete Record</button>
         </form>
     `
 
     $("#edit").append(html)
 
+}
+
+function deleteRecord() {
+    let movieID= $("#edit_id").val();
+    $.ajax({
+        method: "DELETE",
+        url: url + "/api/products/deleteMovie/" + movieID,
+        data: {},
+        async: false,
+    }).done(function (data) {
+        console.log('Yay it works!', data)
+        $("#edit").empty();
+        getAllMovies();
+    })
 }
 
 function getMovieByID(movieID) {
@@ -87,7 +106,9 @@ function createRecord() {
     let obj = {
         title: $("#title").val(),
         director: $("#director").val(),
-        genre: $("#genre").val()
+        genre: $("#genre").val(),
+        image: $("#image").val(), 
+
     }
 
     $.ajax({
@@ -108,7 +129,8 @@ function updateRecord(updateRecord) {
         id: parseInt($("#edit_id").val()),
         title: $("#edit_title").val(),
         director: $("#edit_director").val(),
-        genre: $("#edit_genre").val()
+        genre: $("#edit_genre").val(),
+        image: $("#edit_image").val()
     }
 
     $.ajax({
