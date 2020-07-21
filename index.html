@@ -10,23 +10,31 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-    Movie Library
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="text-center"> Movie Library</h1>
 
     createRecord 
     <form action="">
-      title <input id="title" type="text">
-      director <input id="director" type="text">
-      genre <input id="genre" type="text">
-      image <input id="image" type="text">
-      <button type="button" onClick="createRecord()">create Record</button>
+      title <input id="title" type="text" class="form-control" placeholder="Enter title">
+      director <input id="director" type="text"  class="form-control">
+      genre <input id="genre" type="text"  class="form-control">
+      image <input id="image" type="text"  class="form-control">
+      <button type="button" onClick="createRecord()" class="btn btn-warning">create Record</button>
     </form>
 
+    Search 
+    <div id="searchFilter"> </div>
     Edit
     <div id="edit"></div>
 ------
 movies
 <div id="movies"> </div>
+    </div>
+  </div>
+    
    
+
 
 
 
