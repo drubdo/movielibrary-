@@ -113,6 +113,7 @@ function getMovieByID(movieID) {
 }
 
 function createRecordForm(){
+    $("#createRecord").empty();
     let html = `
         <h4>Create Record</h4>
         <form action="">
@@ -170,6 +171,8 @@ function updateRecord(updateRecord) {
 }
 
 function search(columnNames){
+    
+    $("#searchFilter").empty();
     let html = '<h4>Search</h4><select id="selection" onchange="clearInput()" class="form-control" width="200">'
     let i = 1
     $.each(columnNames, function(key, value, index) {
