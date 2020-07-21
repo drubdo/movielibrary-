@@ -121,6 +121,7 @@ function createRecord() {
         }
     }).done(function (data) {
         console.log('Yay it works!', data)
+        getAllMovies();
     })
 }
 

@@ -13,7 +13,8 @@ exports.body = (req, res, next) => {
       (method == "POST" ? isNullOrUndefined(data.id) : isNotEmptyAndIsNumber(data.id)) &&
       isNotEmptyAndIsString(data.title) &&
       isNotEmptyAndIsString(data.director) &&
-      isNotEmptyAndIsString(data.genre)
+      isNotEmptyAndIsString(data.genre) &&
+      isNotEmptyAndIsString(data.image)
     ) {
       next();
     } else {

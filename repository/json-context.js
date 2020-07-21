@@ -42,6 +42,7 @@ function create(dataPath, data) {
     title: data.title,
     director: data.director,
     genre: data.genre,
+    image: data.image,
   };
   jsonData[newObjectId - 1] = newRecord;
   writeFileSync(dataPath, jsonData);
