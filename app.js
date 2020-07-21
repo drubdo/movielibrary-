@@ -160,8 +160,6 @@ function updateRecord(updateRecord) {
         getAllMovies();
     })
 }
-<<<<<<< HEAD
-=======
 
 function search(columnNames){
     let html = '<select id="selection" onchange="clearInput()" class="form-control" width="200">'
@@ -196,4 +194,3 @@ $(document).ready(function() {
         }).show();
     })
 });
->>>>>>> 12068a47dba27c31b9033374d690e5d03fa5dc61
