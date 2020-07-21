@@ -169,7 +169,7 @@ function search(columnNames){
         i++;
     });
     html += '</select>'
-    html += '<input type="text" onchange="searchTableUser()" id="userSearch" class="form-control">'
+    html += '<input type="text" id="userSearch" class="form-control">'
     $("#searchFilter").append(html)
 }
 
