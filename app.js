@@ -14,6 +14,7 @@ function getAllMovies() {
         console.log('Yay it works!', data)
         generateTable(data)
         search(data[0])
+        createRecordForm()
     });
 }
 getAllMovies();
@@ -105,6 +106,19 @@ function getMovieByID(movieID) {
     })
 }
 
+function createRecordForm(){
+    let html = `
+        <form action="">
+            title <input id="title" type="text" class="form-control" placeholder="Enter title">
+            director <input id="director" type="text"  class="form-control">
+            genre <input id="genre" type="text"  class="form-control">
+            image <input id="image" type="text"  class="form-control">
+            <button type="button" onClick="createRecord()" class="btn btn-warning">create Record</button>
+        </form>
+    `
+    $("#createRecord").append(html)
+}
+
 function createRecord() {
     let obj = {
         title: $("#title").val(),
@@ -150,14 +164,14 @@ function updateRecord(updateRecord) {
 =======
 
 function search(columnNames){
-    let html = '<select id="selection" onchange="clearInput()">'
+    let html = '<select id="selection" onchange="clearInput()" class="form-control" width="200">'
     let i = 1
     $.each(columnNames, function(key, value, index) {
         html += `<option id="${key}" value="${i}">${key}</option>`
         i++;
     });
     html += '</select>'
-    html += '<input type="text" onchange="searchTableUser()" id="userSearch">'
+    html += '<input type="text" onchange="searchTableUser()" id="userSearch" class="form-control">'
     $("#searchFilter").append(html)
 }
 
