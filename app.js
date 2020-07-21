@@ -11,7 +11,6 @@ function getAllMovies() {
         data: {},
         async: false,
     }).done(function (data) {
-        console.log('Yay it works!', data)
         generateTable(data)
         search(data[0])
         createRecordForm()
@@ -20,17 +19,19 @@ function getAllMovies() {
 getAllMovies();
 
 function generateTable(data) {
-    let html;
-    html += `
-        <table class="table">
+    
+     let html = `
+    <h4>Movies</h4>
+    <div class="table-responsive" style="padding:3px">
+    <table class="table table-bordered bg-white" style="white-space:nowrap">
             <thead>
                 <tr> 
-                    <th> edit </th>
-                    <th> id </th>
-                    <th> title </th>
-                    <th> director </th>
-                    <th> genre </th>
-                    <th> image </th>
+                    <th> Edit </th>
+                    <th> Id </th>
+                    <th> Title </th>
+                    <th> Director </th>
+                    <th> Genre </th>
+                    <th> Image </th>
                 </tr>
             </thead>
     `
@@ -46,7 +47,7 @@ function generateTable(data) {
          
             <tr>
             <td>
-                <button onClick="edit('${data}')"> edit </button>
+                <button class="btn btn-primary" onClick="edit('${data}')"> edit </button>
             </td>
             <td id="id"> ${value.id} </td>
             <td id="title"> ${value.title} </td>
@@ -57,7 +58,7 @@ function generateTable(data) {
              
         `
     })
-    html += `</tbody> </table>`;
+    html += `</tbody> </table></div>`;
     $("#movies").append(html)
 }
 
@@ -66,6 +67,7 @@ function edit(data) {
 
     data = JSON.parse(data)
     let html = `
+        <h4>Edit<h4>
         <form action="">
             <input id="edit_id" type="text" value="${data.id}" style="display:none">
             title <input id="edit_title" type="text" value="${data.title}">
@@ -74,11 +76,15 @@ function edit(data) {
             image <input id="edit_image" type="text" value="${data.image}"> 
             <button type="button" onClick="updateRecord()">Update Record</button>
             <button type="button" onClick="deleteRecord()">Delete Record</button>
+            <button type="button" onClick="cancelEdit()">Cancel</button>
         </form>
     `
 
     $("#edit").append(html)
 
+}
+function cancelEdit(){
+    $("#edit").empty();
 }
 
 function deleteRecord() {
@@ -108,11 +114,13 @@ function getMovieByID(movieID) {
 
 function createRecordForm(){
     let html = `
+        <h4>Create Record</h4>
         <form action="">
-            title <input id="title" type="text" class="form-control" placeholder="Enter title">
-            director <input id="director" type="text"  class="form-control">
-            genre <input id="genre" type="text"  class="form-control">
-            image <input id="image" type="text"  class="form-control">
+            Title <input id="title" type="text" class="form-control" placeholder="Enter title">
+            Director <input id="director" type="text"  class="form-control" placeholder="Enter Director">
+            Genre <input id="genre" type="text"  class="form-control" placeholder="Enter Genre">
+            Image <input id="image" type="text"  class="form-control" placeholder="Input image url">
+            <br>
             <button type="button" onClick="createRecord()" class="btn btn-warning">create Record</button>
         </form>
     `
@@ -162,7 +170,7 @@ function updateRecord(updateRecord) {
 }
 
 function search(columnNames){
-    let html = '<select id="selection" onchange="clearInput()" class="form-control" width="200">'
+    let html = '<h4>Search</h4><select id="selection" onchange="clearInput()" class="form-control" width="200">'
     let i = 1
     $.each(columnNames, function(key, value, index) {
         html += `<option id="${key}" value="${i}">${key}</option>`
@@ -187,6 +195,7 @@ $(document).ready(function() {
     $('#userSearch').keyup(function() {
         let idTable = searchTable();
         var rex = new RegExp($(this).val(), 'i');
+        console.log($(this).val())
         $('.search tr ').hide();
         $('.search tr ').filter(function(i, v) {
             var $t = $(this).children(":eq(" + idTable + ")");
