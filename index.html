@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>Movie Library</title>
   <meta charset="utf-8">
@@ -9,29 +10,29 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
+
 <body>
-    Movie Library
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="text-center"> Movie Libary</h1>
 
-    createRecord 
-    <form action="">
-      title <input id="title" type="text">
-      director <input id="director" type="text">
-      genre <input id="genre" type="text">
-      image <input id="image" type="text">
-      <button type="button" onClick="createRecord()">create Record</button>
-    </form>
+      createRecord
+      <form action="">
+        title <input id="title" type="text" class="form-control">
+        director <input id="director" type="text" class="form-control">
+        genre <input id="genre" type="text" class="form-control">
+        image <input id="image" type="text" class="form-contol">
+        <button type="button" onClick="createRecord()" class="btn btn-info">create Record</button>
+      </form>
 
-    Edit
-    <div id="edit"></div>
-------
-movies
-<div id="movies"> </div>
-   
+      Edit
+      <div id="edit"></div>
 
+      Movies
+      <div id="movies"> </div>
+    </div>
 
-
-   <script src="app.js"></script>
+    <script src="app.js"></script>
 </body>
+
 </html>
-
-
